@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <aside>
+            <nav>
+                <a href="">
+                    <span>已报名</span>
+                    <b>126</b>
+                </a>
+                <a href="">
+                    <span>投票人次</span>
+                    <b>964</b>
+                </a>
+                <a href="">
+                    <span>浏览量</span>
+                    <b>1263</b>
+                </a>
+            </nav>
+            <form action=""><input type="text" placeholder="请输入喵主名字或编号"><i></i></form>
+        </aside>
+        <div class="list">
+            <li><a href="">每日推荐</a></li>
+            <li><a href="">投票排行</a></li>
+            <li><a href="">TOP 300</a></li>
+        </div>
+        <main>
+
+        </main>
+    </div>
+    <script src="zepto.min.js"></script>
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth / 375 * 100 + "px";
+        window.onresize = function() {
+            document.documentElement.style.fontSize = window.innerWidth / 375 * 100 + "px";
+        }
+        var data = [{
+            "img": "img/maomi.png",
+            "num": "22号",
+            "name": "小可爱",
+            "ticket": "122票",
+            "send": "投票"
+        }, {
+            "img": "img/maomi2.png",
+            "num": "36号",
+            "name": "大肥猫",
+            "ticket": "122票",
+            "send": "投票"
+        }, {
+            "img": "img/maomi.png",
+            "num": "22号",
+            "name": "小可爱",
+            "ticket": "122票",
+            "send": "投票"
+        }, {
+            "img": "img/maomi2.png",
+            "num": "36号",
+            "name": "大肥猫",
+            "ticket": "122票",
+            "send": "投票"
+        }]
+        var str = "";
+        data.forEach(function(val, i) {
+            console.log(val);
+            str += `
+            <dl>
+                <dt><img src="${val.img}"><i>${val.num}</i></dt>
+                <dd>
+                    <label>
+                        <span>${val.name}</span>
+                        <a>${val.ticket}</a>
+                    </label><b>${val.send}</b>
+                </dd>
+            </dl>
+            `
+        })
+        $("main").append(str);
+    </script>
+</body>
+
+</html>
